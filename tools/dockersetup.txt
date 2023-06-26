@@ -1,0 +1,73 @@
+sudo docker system prune --all
+sudo docker volume prune 
+sudo docker-compose up -d
+sudo docker ps -a
+sudo docker ps 
+sudo docker stop
+to get the ip of the container
+sudo docker  inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' d696
+sudo docker exec -it e57 geth attach /execution/geth.ipc
+
+172.28.0.2
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+
+sudo docker logs --follow 347
+
+# install docker  in ubuntu 
+sudo apt  install docker.io
+#to install docker compose
+sudo apt  install docker-compose
+sudo inspect bridge
+
+
+sudo docker network inspect 70b
+
+
+ssh rasin@10.101.245.13 -p 982
+!<^WexUs(*<(5TPX
+
+
+#to update the version 
+ sudo curl -L "https://github.com/docker/compose/releases/download/v2.18.1/docker-compose-linux-x86_64" -o /usr/local/bin/docker-compose
+
+sudo chmod +x /usr/local/bin/docker-compose
+
+sudo docker-compose --version
+
+https://docs.docker.com/engine/install/ubuntu/
+
+sudo docker compose down
+
+ sudo docker-compose -f docker-composev3.yml down
+
+sudo docker node ls
+
+
+
+
+
+7b7f3a205ffa   gcr.io/prysmaticlabs/prysm/validator:latest      "/app/cmd/validator/…"   47 seconds ago   Up 42 seconds                                                                                    lfinode-validator-1
+f95918591493   gcr.io/prysmaticlabs/prysm/beacon-chain:latest   "/app/cmd/beacon-cha…"   47 seconds ago   Up 43 seconds   0.0.0.0:3500->3500/tcp, 0.0.0.0:4000->4000/tcp, 0.0.0.0:8080->8080/tcp           lfinode-beacon-chain-1
+5dd3ce679d24   ethereum/client-go:latest                        "geth --http --http.…"   47 seconds ago   Up 45 seconds   0.0.0.0:8545->8545/tcp, 8546/tcp, 0.0.0.0:8551->8551/tcp, 30303/tcp, 30303/udp   lfinode-geth-1
+
+10.101.245.13
+
+
+5dd
+172.20.0.2
+
+
+050005051dc4   gcr.io/prysmaticlabs/prysm/validator:latest      "/app/cmd/validator/…"   2 minutes ago   Up 2 minutes                                                                                    lfinode-validator-1
+84e21ab0c320   gcr.io/prysmaticlabs/prysm/beacon-chain:latest   "/app/cmd/beacon-cha…"   2 minutes ago   Up 2 minutes   0.0.0.0:3500->3500/tcp, 0.0.0.0:4000->4000/tcp, 0.0.0.0:8080->8080/tcp           lfinode-beacon-chain-1
+f6f5d4075134   ethereum/client-go:latest                        "geth --http --http.…"   2 minutes ago   Up 2 minutes   0.0.0.0:8545->8545/tcp, 8546/tcp, 0.0.0.0:8551->8551/tcp, 30303/tcp, 30303/udp   lfinode-geth-1
+
+
+ 10.101.245.12
+
+
+f6f
+172.25.0.2
+
+
+

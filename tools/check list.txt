@@ -1,0 +1,58 @@
+Create docker image for full node
+1. create an account from geth which will provide wallet address.
+2. create password.txt, which used to create the wallet.
+3. update wallet address in docker compose yml.
+4. create jwtsecret
+
+ceate new folders and add files in that.
+4. execution
+   files: 
+a)genesis.json --> modify allocation
+b)config.toml
+c)geth_password.txt  --> sudo geth -datadir ./execution account new
+   0x4F5b090F9E31A5A3b47EB637B881d255bD26E1Ad   
+d) change extraData in genesis file - wallet 40digits  ( 0x4F5b090F9E31A5A3b47EB637B881d255bD26E1Ad  --> 4F5b090F9E31A5A3b47EB637B881d255bD26E1Ad                                                    )
+5. consensus
+   file : config.yml
+
+6. sudo docker network create lfi-network
+6. sudo docker-compose  -f docker-compose-v3.yml  up
+7. sudo docker tag d4313fd69efe rrkwave/lfi-node:nodeV1
+8. docker push rrkwave/lfi-node:nodeV1
+Run the nodes from Kubernetes
+1. sudo nano dock	
+     sudo docker images 
+     sudo minikube start --kubernetes-version=latest --force
+     sudo docker images 
+     sudo docekr ps
+     sudo minikube kubectl create deployment lfinode -- --image=rrkwave/lfinode:nodeV1
+     sudo minikube kubectl expose deployment lfinode -- --type=NodePort --port=8081
+
+
+minikube start \
+  --kubernetes-version=v1.7.0 \
+  --cpus=2 \
+  --memory=4096 \
+  --extra-config=apiserver.ServiceNodePortRange=1–50000
+
+
+minikube ssh -- sudo busybox mount \
+  -t nfs 192.168.99.1:/Users /mnt/sda1/data/source-code \
+  -o rw,async,noatime,rsize=32768,wsize=32768,proto=tcp
+  
+
+
+
+kubectl run localtest --image=digifigroup/lfinode:ExNodeV1.0 --image-pull-policy=Never
+
+
+
+ 
+
+
+
+
+
+
+
+ 

@@ -1,0 +1,24 @@
+kubernets installation
+
+sudo apt install apt-transport-https curl
+	
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" >> ~/kubernetes.list
+sudo mv ~/kubernetes.list /etc/apt/sources.list.d
+
+sudo apt update
+	
+sudo apt install kubelet
+sudo apt install kubeadm
+sudo apt install kubectl
+sudo apt-get install -y kubernetes-cni
+	
+sudo apt-get install -y kubelet kubeadm kubectl kubernetes-cni
+	
+sudo swapoff -a
+sudo reboot
+	
+sudo nano /etc/fstab    #check memory swap is enabled
+
+sudo hostnamectl set-hostname kubernetes-master  #  for master nodes
+sudo hostnamectl set-hostname kubernetes-worker # for worker nodes
